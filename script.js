@@ -1,9 +1,5 @@
-
-        /* --- JAVASCRIPT --- */
-        
-        // 1. CURSOR MANIPULATION
-        const cursor = document.querySelector('.cursor');
-        const btn = document.querySelector('.btn');
+ const cursor = document.querySelector('.cursor');
+const btn = document.querySelector('.btn');
         
         let mouseX = 0;
         let mouseY = 0;
@@ -15,9 +11,7 @@
             mouseY = e.clientY;
         });
 
-        // Smooth Animation Loop for Cursor
         function animateCursor() {
-            // Linear interpolation (Lerp) for smooth trailing effect
             cursorX += (mouseX - cursorX) * 0.1;
             cursorY += (mouseY - cursorY) * 0.1;
 
@@ -36,7 +30,6 @@
             cursor.classList.remove('hovered');
         });
 
-        // 2. CANVAS GRAPHICS (The "XYZ" Visuals)
         const canvas = document.getElementById('canvas1');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -54,7 +47,6 @@
                 this.size = size;
                 this.color = color;
             }
-            // Draw particle
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
@@ -75,7 +67,6 @@
             }
         }
 
-        // Initialize Particles
         function init() {
             particlesArray = [];
             let numberOfParticles = (canvas.height * canvas.width) / 9000;
@@ -90,7 +81,6 @@
             }
         }
 
-        // Connect particles with lines
         function connect() {
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
@@ -108,7 +98,6 @@
             }
         }
 
-        // Animation Loop
         function animate() {
             requestAnimationFrame(animate);
             ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -122,7 +111,6 @@
         init();
         animate();
 
-        // Handle Window Resize
         window.addEventListener('resize', () => {
             canvas.width = innerWidth;
             canvas.height = innerHeight;
