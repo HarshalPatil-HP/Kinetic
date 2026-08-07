@@ -1,8 +1,4 @@
   
-        /* --- CSS STYLING --- */
-
-
-        /* The Background Canvas */
         #canvas1 {
             position: absolute;
             top: 0;
@@ -11,23 +7,20 @@
             height: 100%;
             z-index: 1;
         }
-
-        /* The Content */
         .content {
             position: relative;
             z-index: 2;
             text-align: center;
-            pointer-events: none; /* Let clicks pass through to buttons */
+            pointer-events: none; 
         }
 
         h1 {
             font-size: 5rem;
             font-weight: 800;
             letter-spacing: -2px;
-            mix-blend-mode: difference; /* Cool graphic effect */
+            mix-blend-mode: difference; 
         }
 
-        /* The Magnetic Button */
         .btn {
             pointer-events: auto;
             display: inline-block;
@@ -42,10 +35,6 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-
-        /* --- CUSTOM CURSOR --- */
-        
-
         .cursor.hovered {
             width: 50px;
             height: 50px;
@@ -53,12 +42,10 @@
             border-color: transparent;
             mix-blend-mode: difference;
         }
-        /* --- CSS STYLING --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* cursor: none;  <-- I DELETED THIS LINE SO YOU CAN SEE YOUR MOUSE */
             cursor: default; 
         }
 
@@ -73,17 +60,16 @@
             align-items: center;
         }
 
-        /* The Custom Cursor Element */
         .cursor {
             position: fixed;
             top: 0;
             left: 0;
             width: 20px;
             height: 20px;
-            background-color: white; /* Changed to solid white so it's easier to see */
+            background-color: white; 
             border-radius: 50%;
-            transform: translate(-50%, -50%); /* Centers the circle on the mouse */
-            pointer-events: none; /* Allows you to click through the circle */
+            transform: translate(-50%, -50%); 
+            pointer-events: none; 
             z-index: 9999;
             transition: width 0.3s, height 0.3s; 
             mix-blend-mode: difference;
