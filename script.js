@@ -48,7 +48,6 @@ function animateCursor() {
                 ctx.fillStyle = '#ffffff';
                 ctx.fill();
             }
-            // Update particle position
             update() {
                 if (this.x > canvas.width || this.x < 0) {
                     this.directionX = -this.directionX;
