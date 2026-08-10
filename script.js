@@ -1,6 +1,6 @@
- const cursor = document.querySelector('.cursor');
+const cursor = document.querySelector('.cursor');
 const btn = document.querySelector('.btn');
-        let mouseX = 0;
+let mouseX = 0;
         let mouseY = 0;
         let cursorX = 0;
         let cursorY = 0;
@@ -8,7 +8,7 @@ const btn = document.querySelector('.btn');
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
-        function animateCursor() {
+function animateCursor() {
             cursorX += (mouseX - cursorX) * 0.1;
             cursorY += (mouseY - cursorY) * 0.1;
 
@@ -33,8 +33,6 @@ const btn = document.querySelector('.btn');
         canvas.height = window.innerHeight;
 
         let particlesArray;
-
-        // Create Particle Class
         class Particle {
             constructor(x, y, directionX, directionY, size, color) {
                 this.x = x;
@@ -107,9 +105,8 @@ const btn = document.querySelector('.btn');
 
         init();
         animate();
-
-        window.addEventListener('resize', () => {
-            canvas.width = innerWidth;
-            canvas.height = innerHeight;
-            init();
-        });
+window.addEventListener('resize', () => {
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+init();
+});
