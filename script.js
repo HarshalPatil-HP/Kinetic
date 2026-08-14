@@ -19,7 +19,6 @@ let mouseX = 0;
         }
         animateCursor();
 
-        // Magnetic Hover Effect
         btn.addEventListener('mouseenter', () => {
             cursor.classList.add('hovered');
         });
