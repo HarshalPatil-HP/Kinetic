@@ -18,7 +18,6 @@ let mouseX = 0;
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
-
         btn.addEventListener('mouseenter', () => {
             cursor.classList.add('hovered');
         });
@@ -59,7 +58,6 @@ let mouseX = 0;
                 this.draw();
             }
         }
-
         function init() {
             particlesArray = [];
             let numberOfParticles = (canvas.height * canvas.width) / 9000;
