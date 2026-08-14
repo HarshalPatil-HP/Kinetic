@@ -24,7 +24,6 @@ let mouseX = 0;
         btn.addEventListener('mouseleave', () => {
             cursor.classList.remove('hovered');
         });
-
         const canvas = document.getElementById('canvas1');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -88,7 +87,6 @@ let mouseX = 0;
                 }
             }
         }
-
         function animate() {
             requestAnimationFrame(animate);
             ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -98,7 +96,6 @@ let mouseX = 0;
             }
             connect();
         }
-
         init();
         animate();
 window.addEventListener('resize', () => {
