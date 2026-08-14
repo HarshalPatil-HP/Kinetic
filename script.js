@@ -8,7 +8,7 @@ let mouseX = 0;
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
-function animateCursor() {
+        function animateCursor() {
             cursorX += (mouseX - cursorX) * 0.1;
             cursorY += (mouseY - cursorY) * 0.1;
 
