@@ -1,20 +1,19 @@
 const cursor = document.querySelector('.cursor');
 const btn = document.querySelector('.btn');
 let mouseX = 0;
-        let mouseY = 0;
-        let cursorX = 0;
-        let cursorY = 0;
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-        function animateCursor() {
-            cursorX += (mouseX - cursorX) * 0.1;
-            cursorY += (mouseY - cursorY) * 0.1;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+ document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+         mouseY = e.clientY;
+);
+ function animateCursor() {
+         cursorX += (mouseX - cursorX) * 0.1;
+cursorY += (mouseY - cursorY) * 0.1;
 
-            cursor.style.left = cursorX + 'px';
-            cursor.style.top = cursorY + 'px';
-
+  cursor.style.left = cursorX + 'px';
+  cursor.style.top = cursorY + 'px';
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
@@ -98,6 +97,7 @@ let mouseX = 0;
         }
         init();
         animate();
+
 window.addEventListener('resize', () => {
 canvas.width = innerWidth;
 canvas.height = innerHeight;
