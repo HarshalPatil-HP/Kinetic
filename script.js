@@ -8,8 +8,9 @@ let cursorY = 0;
         mouseX = e.clientX;
          mouseY = e.clientY;
 );
+
  function animateCursor() {
-         cursorX += (mouseX - cursorX) * 0.1;
+   cursorX += (mouseX - cursorX) * 0.1;
 cursorY += (mouseY - cursorY) * 0.1;
 
   cursor.style.left = cursorX + 'px';
@@ -97,6 +98,7 @@ cursorY += (mouseY - cursorY) * 0.1;
             for (let i = 0; i < particlesArray.length; i++) {
                 particlesArray[i].update();
             }
+         
             connect();
         }
 
