@@ -10,7 +10,7 @@ let cursorY = 0;
 );
 
  function animateCursor() {
-   cursorX += (mouseX - cursorX) * 0.1;
+cursorX += (mouseX - cursorX) * 0.1;
 cursorY += (mouseY - cursorY) * 0.1;
 
   cursor.style.left = cursorX + 'px';
