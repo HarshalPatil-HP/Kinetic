@@ -57,7 +57,6 @@ cursorY += (mouseY - cursorY) * 0.1;
                 this.draw();
             }
         }
-
         function init() {
             particlesArray = [];
             let numberOfParticles = (canvas.height * canvas.width) / 9000;
@@ -71,12 +70,11 @@ cursorY += (mouseY - cursorY) * 0.1;
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
             }
         }
-
         function connect() {
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
                     let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
-                                   ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                                    ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
                     if (distance < (canvas.width/7) * (canvas.height/7)) {
                         ctx.strokeStyle = 'rgba(255,255,255,0.05)'; // Faint lines
                         ctx.lineWidth = 1;
