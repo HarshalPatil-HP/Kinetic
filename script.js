@@ -1,13 +1,16 @@
 const cursor = document.querySelector('.cursor');
 const btn = document.querySelector('.btn');
+
 let mouseX = 0;
 let mouseY = 0;
 let cursorX = 0;
 let cursorY = 0;
+
  document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
          mouseY = e.clientY;
 );
+
 function animateCursor() {
 cursorX += (mouseX - cursorX) * 0.1;
 cursorY += (mouseY - cursorY) * 0.1;
@@ -16,17 +19,23 @@ cursorY += (mouseY - cursorY) * 0.1;
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
+
         btn.addEventListener('mouseenter', () => {
             cursor.classList.add('hovered');
         });
+
         btn.addEventListener('mouseleave', () => {
             cursor.classList.remove('hovered');
         });
+
         const canvas = document.getElementById('canvas1');
         const ctx = canvas.getContext('2d');
+
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+
         let particlesArray;
+
         class Particle {
             constructor(x, y, directionX, directionY, size, color) {
                 this.x = x;
@@ -36,12 +45,14 @@ cursorY += (mouseY - cursorY) * 0.1;
                 this.size = size;
                 this.color = color;
             }
+         
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
                 ctx.fillStyle = '#ffffff';
                 ctx.fill();
             }
+         
             update() {
                 if (this.x > canvas.width || this.x < 0) {
                     this.directionX = -this.directionX;
@@ -54,6 +65,7 @@ cursorY += (mouseY - cursorY) * 0.1;
                 this.draw();
             }
         }
+
         function init() {
             particlesArray = [];
             let numberOfParticles = (canvas.height * canvas.width) / 9000;
@@ -67,6 +79,7 @@ cursorY += (mouseY - cursorY) * 0.1;
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
             }
         }
+
         function connect() {
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
@@ -83,6 +96,7 @@ cursorY += (mouseY - cursorY) * 0.1;
                 }
             }
         }
+
         function animate() {
             requestAnimationFrame(animate);
             ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -92,8 +106,10 @@ cursorY += (mouseY - cursorY) * 0.1;
             }
             connect();
         }
+
         init();
         animate();
+
 window.addEventListener('resize', () => {
 canvas.width = innerWidth;
 canvas.height = innerHeight;
