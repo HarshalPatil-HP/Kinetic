@@ -6,7 +6,7 @@ let mouseY = 0;
 let cursorX = 0;
 let cursorY = 0;
 
- document.addEventListener('mousemove', (e) => {
+document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
          mouseY = e.clientY;
 );
@@ -14,10 +14,11 @@ let cursorY = 0;
 function animateCursor() {
 cursorX += (mouseX - cursorX) * 0.1;
 cursorY += (mouseY - cursorY) * 0.1;
-  cursor.style.left = cursorX + 'px';
-  cursor.style.top = cursorY + 'px';
-            requestAnimationFrame(animateCursor);
+cursor.style.left = cursorX + 'px';
+cursor.style.top = cursorY + 'px';
+requestAnimationFrame(animateCursor);
         }
+
         animateCursor();
 
         btn.addEventListener('mouseenter', () => {
