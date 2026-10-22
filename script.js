@@ -91,7 +91,6 @@ requestAnimationFrame(animateCursor);
                 }
             }
         }
-
         function animate() {
             requestAnimationFrame(animate);
             ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -101,13 +100,10 @@ requestAnimationFrame(animateCursor);
             }
             connect();
         }
-
         init();
         animate();
-
 window.addEventListener('resize', () => {
 canvas.width = innerWidth;
 canvas.height = innerHeight;
- 
 init();
 });
