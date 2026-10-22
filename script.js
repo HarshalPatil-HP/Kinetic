@@ -22,15 +22,11 @@ requestAnimationFrame(animateCursor);
         btn.addEventListener('mouseleave', () => {
             cursor.classList.remove('hovered');
         });
-
         const canvas = document.getElementById('canvas1');
         const ctx = canvas.getContext('2d');
-
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-
         let particlesArray;
-
         class Particle {
             constructor(x, y, directionX, directionY, size, color) {
                 this.x = x;
@@ -40,14 +36,12 @@ requestAnimationFrame(animateCursor);
                 this.size = size;
                 this.color = color;
             }
-         
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
                 ctx.fillStyle = '#ffffff';
                 ctx.fill();
             }
-         
             update() {
                 if (this.x > canvas.width || this.x < 0) {
                     this.directionX = -this.directionX;
@@ -60,7 +54,6 @@ requestAnimationFrame(animateCursor);
                 this.draw();
             }
         }
-
         function init() {
             particlesArray = [];
             let numberOfParticles = (canvas.height * canvas.width) / 9000;
@@ -74,7 +67,6 @@ requestAnimationFrame(animateCursor);
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
             }
         }
-
         function connect() {
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
