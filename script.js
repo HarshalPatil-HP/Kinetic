@@ -66,7 +66,8 @@ requestAnimationFrame(animateCursor);
                 let color = '#ffffff';
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
             }
-        }
+        }\
+
         function connect() {
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
@@ -83,6 +84,7 @@ requestAnimationFrame(animateCursor);
                 }
             }
         }
+
         function animate() {
             requestAnimationFrame(animate);
             ctx.clearRect(0, 0, innerWidth, innerHeight);
