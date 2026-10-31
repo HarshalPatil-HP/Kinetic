@@ -1,5 +1,6 @@
 const cursor = document.querySelector('.cursor');
 const btn = document.querySelector('.btn');
+
 let mouseX = 0;
 let mouseY = 0;
 let cursorX = 0;
@@ -8,6 +9,7 @@ document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
          mouseY = e.clientY;
 );
+
 function animateCursor() {
 cursorX += (mouseX - cursorX) * 0.1;
 cursorY += (mouseY - cursorY) * 0.1;
